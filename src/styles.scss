@@ -1,1 +1,142 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+//fonts
+@font-face {
+    font-family: "ssp";
+    src: local('ssp');
+    src: url(assets/fonts/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: "ssp-medium";
+    src: local('ssp-medium');
+    src: url(assets/fonts/SourceSansPro-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "ssp-bold";
+    src: local('ssp-bold');
+    src: url(assets/fonts/SourceSansPro-Bold.ttf);
+}
+
+@font-face {
+    font-family: "ssp-light";
+    src: local('ssp-light');
+    src: url(assets/fonts/SourceSansPro-Light.ttf);
+}
+
+
+html {
+    font-family: ssp;
+}
+body{
+    background-color: #F5F5F5;
+    color: #484b4d;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+th {
+    font-family: ssp-bold;
+}
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #f1e8e8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dad8d8;
+    //border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #929292;
+}
+
+//checkboxes
+input[type="radio"]:checked+label,
+input[type="checkbox"]:checked+label {
+    /* Agregar estilos personalizados definidos en tailwind.config.js */
+    //background-color: #88939D;
+    color: #223B50;
+    border: 2px solid #223B50;
+}
+
+//checboxes: when don´t want style on label
+input[type="radio"]:checked+label.no-box,
+input[type="checkbox"]:checked+label.no-box {
+    /* Agregar estilos personalizados definidos en tailwind.config.js */
+    //background-color: #88939D;
+    color: black;
+    border: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate(0deg);
+    }
+
+    25% {
+        -webkit-transform: rotate3d(0, 0, 1, 90deg);
+        transform: rotate(90deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(0, 0, 1, 180deg);
+        transform: rotate(180deg);
+    }
+
+    75% {
+        -webkit-transform: rotate3d(0, 0, 1, 270deg);
+        transform: rotate(270deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(0, 0, 1, 360deg);
+        transform: rotate(360deg);
+    }
+
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
