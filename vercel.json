@@ -2,10 +2,7 @@
     "rewrites": [
       {
         "source": "/api/(.*)",
-        "destination": "https://api.infojobs.net/:1",
-        "headers": {
-          "Authorization": "Basic YOUR_AUTHORIZATION_HEADER"
-        }
+        "destination": "https://api.infojobs.net/:1"
       }
     ]
   }
