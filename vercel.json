@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "source": "/api/(.*)",
-        "destination": "https://api.infojobs.net/:1"
+        "destination": "https://api.infojobs.net/$1"
       }
     ]
   }

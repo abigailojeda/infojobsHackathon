@@ -28,7 +28,7 @@ public clientSecret='DBc7DtUAcAEZ2JxL9PKX+kZuHfewDN9in9ca9+CvWpx97n/ujh'
   const headers = new HttpHeaders()
   .set('Authorization', `Basic ${this.encodedCredentials}`)
   .set('Content-Type', 'application/json');
-    const url = 'api/api/1/dictionary/region';
+    const url = '/api/1/dictionary/region';
 
     console.log({headers})
     return this.http.get(url, {headers});
