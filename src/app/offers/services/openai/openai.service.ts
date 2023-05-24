@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Configuration, OpenAIApi, CreateCompletionRequest } from 'openai';
-import { environment } from 'src/environments/environment';
+// import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, catchError, map } from 'rxjs';
 
@@ -17,7 +17,7 @@ export class OpenaiService {
     // Crear una instancia de OpenAIApi utilizando tu clave de API
     this.openai = new OpenAIApi(
       new Configuration({
-        apiKey: environment.openAiKey,
+        apiKey: process.env['OPENAI_API_KEY']
       })
     );
   }
