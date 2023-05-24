@@ -56,6 +56,9 @@ th {
     height: 5px;
 }
 
+.scroller, .scroller:hover {
+    scrollbar-color: #F5F5F5 #fff;
+}
 /* Track */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px #f1e8e8;
@@ -71,6 +74,7 @@ th {
 ::-webkit-scrollbar-thumb:hover {
     background: #929292;
 }
+
 
 //checkboxes
 input[type="radio"]:checked+label,

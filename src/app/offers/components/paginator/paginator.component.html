@@ -1,0 +1,39 @@
+<div class="mt-8 flex justify-center items-center">
+  <ng-container *ngIf="totalPages > 0">
+    <div
+    (click)="goToPage(currentPage - 1)"
+        *ngIf="currentPage > 1"
+      class="flex items-center justify-center rounded-md h-10 w-28 hover:bg-primary_L3"
+    >
+      <img class="w-4" [src]="leftArrow" alt="" />
+
+      <span
+        class=" text-primary mx-2 cursor-pointer"
+        
+      >
+        Anterior
+      </span>
+    </div>
+    <div
+      (click)="goToPage(page)"
+      *ngFor="let page of getPageArray(totalPages, currentPage)"
+      class="{{
+        page == currentPage
+          ? 'bg-primary hover:bg-primary_D1 text-white'
+          : 'hover:bg-primary_L3 text-primary'
+      }} flex justify-center items-center w-10 h-10 rounded-md mx-2 cursor-pointer"
+    >
+      {{ page }}
+    </div>
+    <div
+      (click)="goToPage(currentPage + 1)"
+      *ngIf="currentPage < totalPages"
+      class="flex items-center justify-center rounded-md h-10 w-28 hover:bg-primary_L3"
+    >
+      <span class="text-primary mx-2 cursor-pointer">
+        Siguiente
+      </span>
+      <img class="w-4" [src]="rightArrow" alt="" />
+    </div>
+  </ng-container>
+</div>

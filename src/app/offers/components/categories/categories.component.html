@@ -1,0 +1,27 @@
+<div class="relative ml-4 flex flex-col">
+  <input
+    [(ngModel)]="selectedCategory"
+    readonly
+    class="dropdown px-2 border border-gray_L3 cursor-pointer h-[45px] focus:outline-none active:outline-none py-1 w-[320px] text-base rounded-md bg-arrowDownIcon bg-no-repeat bg-[right_10px_bottom_10px] bg-[length:22px]"
+    [placeholder]="!selectedCategory && 'Selecciona una categoría'"
+  />
+
+  <div   [class.hidden]="!showDropdown"
+    class="scroller bg-white top-[45px] overflow-x-hidden absolute px-2 pb-6 flex flex-col h-[300px] shadow-md overflow-y-auto w-[320px] border border-gray_L3 rounded-md"
+  >
+    <div class="sticky py-4 bg-white top-0">
+      <input
+        [(ngModel)]="filterValue"
+        class="dropdown px-2 border border-gray_L3 h-[45px] focus:outline-none active:outline-none py-1 w-full text-base rounded-md"
+      />
+    </div>
+    <ng-container *ngFor="let category of categories; index as i">
+      <span
+        (click)="selectedCategory = category.value; setCategory(category.key)"
+        class="p-2 hover:bg-gray_L4 cursor-pointer text-gray"
+        *ngIf="i > 0 && i < categories.length - 1 && category.value.toLowerCase().includes(filterValue.toLowerCase())"
+        >{{ category.value }}</span
+      >
+    </ng-container>
+  </div>
+</div>

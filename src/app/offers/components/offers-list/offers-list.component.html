@@ -1,15 +1,62 @@
-<section class="flex w-full flex-col justify-center items-center py-24">
+<section
+  class="flex w-full relative flex-col justify-center items-center py-24"
+>
+  <div
+    class="flex flex-col justify-start items-center pb-8 shadow-md bg-white rounded-md w-full md:w-[1100px]"
+  >
+    <div class="sticky top-0 w-full px-8 pt-8 bg-white">
+      <h1 class="self-start text-lg text-gray my-3">
+        Encuentra tu nuevo puesto de trabajo
+      </h1>
+      <div class="flex w-full items center border-b border-gray_L3 mb-4">
+        <div class="w-full flex items-center rounded-t-md pt-4 pb-8">
+          <!-- <input class="px-2 border border-gray_L3 h-[45px] focus:outline-none active:outline-none py-1 w-2/3 text-sm rounded-md" placeholder="Busca tu nuevo empleo" type="text"> -->
 
-   <div class="flex flex-col justify-start items-center p-8 shadow-md bg-white rounded-md min-h-[500px] w-full md:w-[1100px]">
-    <div class="flex w-full items center border-b border-gray_L3 mb-4">
-        <div class="w-full rounded-t-md p-4">
-            <input class="px-2 border border-gray_L3 h-[45px] focus:outline-none active:outline-none py-1 w-2/3 text-sm rounded-md" placeholder="Busca tu nuevo empleo" type="text">
+          <!-- REGIONS -->
+          <app-regions
+            *ngIf="regions"
+            [regions]="regions"
+            (selectRegion)="updateRegion($event)"
+          ></app-regions>
+          <!-- CATEGORIES -->
+          <app-categories
+            *ngIf="categories"
+            [categories]="categories"
+            (selectCategory)="updateCategory($event)"
+          >
+          </app-categories>
+
+          <button
+            [disabled]="categorySelected == '' && regionSelected == ''"
+            (click)="getOffers()"
+            class="disabled:bg-gray_L3 disabled:text-gray disabled:font-bold ml-4 bg-primary_D1 text-white w-[120px] rounded-md hover:bg-primary cursor-pointer text-sm h-[45px]"
+          >
+            BUSCAR
+          </button>
         </div>
-        <div class="flex items-center justify-between w-[150px]">
-            <span>By InfoJobs</span>
-            <img class="rounded-md w-8 cursor-pointer hover:scale-105" [src]="logo" alt="">
-        </div>
-       </div>
+        <!-- <div class="flex items-center justify-between w-[350px]">
+        <span>Una propuesta para InfoJobs</span>
+        <img
+          class="rounded-md w-8 cursor-pointer hover:scale-105"
+          [src]="logo"
+          alt=""
+        />
+      </div> -->
+      </div>
     </div>
 
+    <div
+      class="h-[500px] w-full overflow-x-hidden overflow-y-auto"
+    >
+      <app-offers-result
+        [isLoading]="isLoading"
+        [offers]="offers"
+      ></app-offers-result>
+    </div>
+  </div>
+  <app-paginator
+    [totalPages]="totalPages"
+    [currentPage]="currentPage"
+    (setCurrentPage)="updatePage($event)"
+  ></app-paginator>
 </section>
