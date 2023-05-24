@@ -10,7 +10,8 @@ import { Observable, catchError, map } from 'rxjs';
 export class OpenaiService {
   openai: OpenAIApi;
   coverLetter: any = '';
-  private openAiApiKey = environment.openAiKey;
+  //private openAiApiKey = environment.openAiKey;
+  private openAiApiKey = process.env['OPENAI_API_KEY'];
 
   constructor(private http: HttpClient) {
     // Crear una instancia de OpenAIApi utilizando tu clave de API
