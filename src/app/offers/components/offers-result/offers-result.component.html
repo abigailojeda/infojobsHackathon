@@ -8,7 +8,7 @@
   *ngIf="offers"
 >
   <ng-container *ngIf="!isLoading">
-    <div
+    <div [routerLink]="['/offers/detail/', offer?.id]"
       class="shadow-md border-b-4 border-primary p-4 cursor-pointer hover:bg-gray_L4 w-[290px] h-[200px] m-4"
       *ngFor="let offer of offers"
     >
@@ -33,32 +33,31 @@
         </h2>
       </div>
       <p
-        class="text-gray_L1 uppercase whitespace-nowrap truncate w-[250px] overflow-hidden text-sm"
+        class="text-gray uppercase whitespace-nowrap truncate w-[250px] overflow-hidden text-sm"
       >
         {{ offer?.author?.name }}
       </p>
 
       <div class="flex items-center whitespace-nowrap truncate w-[250px]">
-        <p *ngIf="offer?.contractType" class="text-gray_L1 text-sm">
+        <p *ngIf="offer?.contractType" class="text-gray text-sm">
           {{ offer?.contractType?.value }}
         </p>
-        <p *ngIf="offer?.workDay" class="text-gray_L1 ml-2 text-sm">|</p>
-        <p *ngIf="offer?.workDay" class="text-gray_L1 ml-2 text-sm">
+        <p *ngIf="offer?.workDay" class="text-gray ml-2 text-sm">|</p>
+        <p *ngIf="offer?.workDay" class="text-gray ml-2 text-sm">
           {{ offer?.workDay?.value }}
         </p>
       </div>
       <div *ngIf="offer?.salaryDescription" class="flex mt-2 items-center">
         <img class="w-4 mr-2" [src]="clockIcon" alt="" />
-        <span class="text-gray_L1 text-sm">{{
+        <span class="text-gray text-sm">{{
           setDateFormatted(offer?.updated)
         }}</span>
       </div>
 
       <div *ngIf="offer?.salaryDescription" class="flex items-center">
         <img class="w-4 mr-2" [src]="salaryIcon" alt="" />
-        <span class="text-gray_L1 text-sm">{{ offer?.salaryDescription }}</span>
+        <span class="text-gray text-sm">{{ offer?.salaryDescription }}</span>
       </div>
-      <button class="bg-primary" (click)="getCoverLetter(offer)">test</button>
     </div>
   </ng-container>
   <ng-container *ngIf="isLoading">

@@ -20,7 +20,7 @@ export class OffersResultComponent implements OnInit {
   public defaultImg:string='https://components.infojobs.com/statics/images/pic-company-logo.png'
 
 
-  constructor( private openaiService:OpenaiService) { }
+
 
   ngOnInit(): void {
   }
@@ -36,8 +36,5 @@ export class OffersResultComponent implements OnInit {
     
   }
 
-  public getCoverLetter(offer:any){
-    this.openaiService.getCoverLetter(offer.title)
-  }
 
 }

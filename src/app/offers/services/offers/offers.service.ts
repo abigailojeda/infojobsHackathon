@@ -35,4 +35,14 @@ export class OffersService {
 
     return this.http.get(url, { headers });
   }
+
+  getOfferById(id: string): Observable<any> {
+    let url = `api/api/7/offer/${id}`;
+
+    const headers = new HttpHeaders()
+      .set('Authorization', `Basic ${this.encodedCredentials}`)
+      .set('Content-Type', 'application/json');
+
+    return this.http.get(url, { headers });
+  }
 }

@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { OffersResultComponent } from './components/offers-result/offers-result.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { OfferComponent } from './pages/offer/offer.component';
+import { OfferDetailComponent } from './components/offer-detail/offer-detail.component';
+import { CoverLetterComponent } from './components/cover-letter/cover-letter.component';
 
 
 
@@ -20,7 +22,9 @@ import { OfferComponent } from './pages/offer/offer.component';
     CategoriesComponent,
     OffersResultComponent,
     PaginatorComponent,
-    OfferComponent
+    OfferComponent,
+    OfferDetailComponent,
+    CoverLetterComponent
   ],
   imports: [
     CommonModule,

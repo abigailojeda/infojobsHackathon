@@ -26,6 +26,7 @@ module.exports = {
       'success':'#00a550',
       'alert':'#f1c40f',
       'error':'#e93e40',
+      'transparent':'rgba(0,0,0,0)',
     },
     fontFamily: {
       'ssp': ['ssp'],
