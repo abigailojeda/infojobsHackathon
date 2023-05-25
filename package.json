@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "config": "ts-node ./src/config-env.ts",
     "start-vercel": "npm run config -- --environment=dev && ng serve",
-    "build-vercel": "npm run config -- --environment=prod && ng build",
+    "build-vercel": "npm run config -- --environment=prod && ng build --prod && node ./src/config-env.js",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test"
