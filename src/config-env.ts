@@ -14,8 +14,9 @@ if (environment === 'prod') {
 const envConfigFile = `
 export const environment = {
   production: ${environment === 'prod' ? 'true' : 'false'},
-  client_id: "${process.env['CLIENT_ID']}",
-  client_secret: "${process.env['CLIENT_SECRET']}",
+  clientId: "${process.env['CLIENT_ID']}",
+  token: "${process.env['TOKEN']}",
+  clientSecret: "${process.env['CLIENT_SECRET']}",
   openAiKey: "${process.env['OPEN_AI_KEY']}",
 };`;
 
