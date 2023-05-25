@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-// import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 export class OffersService {
   constructor(private http: HttpClient) {}
 
-  public token = process.env['TOKEN'];
-  public clientId = process.env['CLIENT_ID'];
-  public clientSecret = process.env['CLIENT_SECRET'];
+  // public token = process.env['TOKEN'];
+  // public clientId = process.env['CLIENT_ID'];
+  // public clientSecret = process.env['CLIENT_SECRET'];
 
-  // public token = environment.token;
-  // public clientId = environment.clientId;
-  // public clientSecret = environment.clientSecret;
+  public token = environment.token;
+  public clientId = environment.clientId;
+  public clientSecret = environment.clientSecret;
 
   public credentials = `${this.clientId}:${this.clientSecret}`;
   public encodedCredentials = btoa(this.credentials);

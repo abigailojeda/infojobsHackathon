@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Configuration, OpenAIApi, CreateCompletionRequest } from 'openai';
-// import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, catchError, map } from 'rxjs';
 
@@ -10,20 +10,21 @@ import { Observable, catchError, map } from 'rxjs';
 export class OpenaiService {
   openai: OpenAIApi;
   coverLetter: any = '';
-  //private openAiApiKey = environment.openAiKey;
-  private openAiApiKey = process.env['OPENAI_API_KEY'];
+  private openAiApiKey = environment.openAiKey;
+  //private openAiApiKey = process.env['OPENAI_API_KEY'];
 
   constructor(private http: HttpClient) {
     // Crear una instancia de OpenAIApi utilizando tu clave de API
     this.openai = new OpenAIApi(
       new Configuration({
-        apiKey: process.env['OPENAI_API_KEY']
+        apiKey: environment.openAiKey
+       // apiKey: process.env['OPENAI_API_KEY']
       })
     );
   }
 
   getCoverLetter(description: any, skills?: any): Observable<string> {
-    const prompt = `Por favor, imagina que eres un expeto redactor y genera una carta de presentación para ${description} sin faltas de ortografía`;
+    const prompt = `Por favor, redacta una carta de presentación para ${description} sin faltas de ortografía`;
     const completionRequest: CreateCompletionRequest = {
       model: 'text-davinci-003',
       prompt,
