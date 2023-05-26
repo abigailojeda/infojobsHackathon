@@ -2,7 +2,10 @@
   <img class="md:w-2/6 w-1/2" [src]="searchIllustration" alt="" />
 </div>
 
-<div class="h-full w-full flex-col items-center flex justify-center" *ngIf="isEmpty">
+<div
+  class="h-full w-full flex-col items-center flex justify-center"
+  *ngIf="isEmpty"
+>
   <img class="md:w-2/6 w-1/2" [src]="noFoundIllustration" alt="" />
 </div>
 
@@ -10,10 +13,10 @@
   class="pb-8 flex flex-wrap justify-center pt-8 h-full w-full"
   *ngIf="offers && !isEmpty"
 >
-  <ng-container *ngIf="!isLoading ">
+  <ng-container *ngIf="!isLoading">
     <div
       [routerLink]="['/offers/detail/', offer?.id]"
-      class="shadow-md border-b-4 border-primary p-4 cursor-pointer hover:bg-gray_L4 w-[290px] h-[200px] m-4"
+      class="shadow-md border-b-4 border-primary p-4 cursor-pointer hover:bg-gray_L4 w-[290px] h-[220px] m-4"
       *ngFor="let offer of offers"
     >
       <div class="flex items-center justify-center pb-2">
@@ -37,7 +40,7 @@
         </h2>
       </div>
       <p
-        class="text-gray uppercase whitespace-nowrap truncate w-[250px] overflow-hidden text-sm"
+        class="text-gray uppercase whitespace-nowrap truncate w-[250px] mt-2 overflow-hidden text-sm"
       >
         {{ offer?.author?.name }}
       </p>
@@ -51,7 +54,11 @@
           {{ offer?.workDay?.value }}
         </p>
       </div>
-      <div *ngIf="offer?.salaryDescription" class="flex mt-2 items-center">
+      <div *ngIf="offer?.city" class="flex mt-4 items-center">
+        <img class="w-4 mr-2" [src]="location" alt="" />
+        <span class="text-gray text-sm">{{ offer?.city }}</span>
+      </div>
+      <div *ngIf="offer?.updated" class="flex items-center">
         <img class="w-4 mr-2" [src]="clockIcon" alt="" />
         <span class="text-gray text-sm">{{
           setDateFormatted(offer?.updated)

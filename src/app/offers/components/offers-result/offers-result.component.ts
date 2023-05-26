@@ -20,9 +20,7 @@ export class OffersResultComponent implements OnInit {
   public clockIcon:string = 'assets/img/clock.svg'
   public skillsIcon:string = 'assets/img/test-checked.svg'
   public defaultImg:string='https://components.infojobs.com/statics/images/pic-company-logo.png'
-
-
-
+  public location: string = 'assets/img/location.svg';
 
   ngOnInit(): void {
   }
