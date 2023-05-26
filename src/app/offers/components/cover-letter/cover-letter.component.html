@@ -47,8 +47,15 @@
       </div>
     </section>
 
-    <div *ngIf="isLoading" class="h-[400px] flex justify-center items-center">
+    <div *ngIf="isLoading" class="h-[400px] flex flex-col justify-center items-center">
       <app-loading></app-loading>
+      <section class="mt-6 animate__animated animate__fadeInLeft">
+        <ngx-typed-js [strings]="['con IA', 'con la API de OpenAI', 'con text davinci 003', 'adaptada a esta oferta de trabajo']" [startDelay]="500" [typeSpeed]="100" [loop]="true">
+         <span> Se está generando tu carta</span> <span class="typing font-bold ml-2 text-primary"></span>
+        </ngx-typed-js>
+      </section>
+      
+      
     </div>
   </div>
 </div>

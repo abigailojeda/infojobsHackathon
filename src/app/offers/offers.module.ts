@@ -12,8 +12,7 @@ import { OfferComponent } from './pages/offer/offer.component';
 import { OfferDetailComponent } from './components/offer-detail/offer-detail.component';
 import { CoverLetterComponent } from './components/cover-letter/cover-letter.component';
 import { SharedModule } from '../shared/shared.module';
-
-
+import { NgxTypedJsModule } from 'ngx-typed-js';
 
 @NgModule({
   declarations: [
@@ -25,13 +24,14 @@ import { SharedModule } from '../shared/shared.module';
     PaginatorComponent,
     OfferComponent,
     OfferDetailComponent,
-    CoverLetterComponent
+    CoverLetterComponent,
   ],
   imports: [
     CommonModule,
     OffersRoutingModule,
     FormsModule,
-    SharedModule
-  ]
+    SharedModule,
+    NgxTypedJsModule,
+  ],
 })
-export class OffersModule { }
+export class OffersModule {}
