@@ -26,8 +26,6 @@ export class RegionsService {
       .set('Authorization', `Basic ${this.encodedCredentials}`)
       .set('Content-Type', 'application/json');
     const url = 'api/api/1/dictionary/province?country=es';
-
-    console.log({ headers });
     return this.http.get(url, { headers });
   }
 }

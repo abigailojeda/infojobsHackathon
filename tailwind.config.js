@@ -5,6 +5,12 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
+    screens: {
+      'sm': '640px', 
+      'md': '900px',
+      'lg': '1180px',
+      'xl': '1280px',
+    },
     backgroundImage: {
       'arrowDownIcon': "url('~/src/assets/img/down_arrow_icon.svg')",
         },

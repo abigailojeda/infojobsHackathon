@@ -1,13 +1,13 @@
-<div class="relative ml-4 flex flex-col">
+<div class="relative md:ml-4 md:mb-0 mb-4 flex flex-col">
   <input
     [(ngModel)]="selectedCategory"
     readonly
-    class="dropdown px-2 border border-gray_L3 cursor-pointer h-[45px] focus:outline-none active:outline-none py-1 w-[320px] text-base rounded-md bg-arrowDownIcon bg-no-repeat bg-[right_10px_bottom_10px] bg-[length:22px]"
+    class="dropdown px-2 border border-gray_L3 cursor-pointer h-[45px] focus:outline-none active:outline-none py-1 md:w-[320px] w-full text-base rounded-md bg-arrowDownIcon bg-no-repeat bg-[right_10px_bottom_10px] bg-[length:22px]"
     [placeholder]="!selectedCategory && 'Selecciona una categoría'"
   />
 
   <div   [class.hidden]="!showDropdown"
-    class="scroller bg-white top-[45px] overflow-x-hidden absolute px-2 pb-6 flex flex-col h-[300px] shadow-md overflow-y-auto w-[320px] border border-gray_L3 rounded-md"
+    class="scroller bg-white top-[45px] overflow-x-hidden absolute px-2 pb-6 flex flex-col h-[300px] shadow-md overflow-y-auto md:w-[320px] w-full border border-gray_L3 rounded-md"
   >
     <div class="sticky py-4 bg-white top-0">
       <input

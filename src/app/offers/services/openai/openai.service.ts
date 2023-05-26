@@ -23,8 +23,8 @@ export class OpenaiService {
     );
   }
 
-  getCoverLetter(description: any, skills?: any): Observable<string> {
-    const prompt = `Por favor, redacta una carta de presentación para ${description} sin faltas de ortografía`;
+  getCoverLetter(offer: any): Observable<string> {
+    const prompt = `Por favor, redacta una carta de presentación para ${offer.title}, que ofrecen un trabajo con esta descripción: ${offer?.description} y solicitan estos requisitos: ${offer?.minRequirements} sin faltas de ortografía`;
     const completionRequest: CreateCompletionRequest = {
       model: 'text-davinci-003',
       prompt,

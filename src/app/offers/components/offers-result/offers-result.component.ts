@@ -11,8 +11,10 @@ import { OpenaiService } from '../../services/openai/openai.service';
 export class OffersResultComponent implements OnInit {
   @Input() offers:any
   @Input() isLoading:any
+  @Input() isEmpty:any
 
   public searchIllustration:string = 'assets/img/search_illustration.svg'
+  public noFoundIllustration:string = 'assets/img/no_results_illustration.svg'
   public salaryIcon:string = 'assets/img/salary.svg'
   public homeIcon:string = 'assets/img/home.svg'
   public clockIcon:string = 'assets/img/clock.svg'

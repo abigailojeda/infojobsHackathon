@@ -22,6 +22,6 @@ export const environment = {
 
 fs.writeFile(targetPath, envConfigFile, function (err:any) {
   if (err) {
-    console.log(err);
+    //console.log(err);
   }
 });

@@ -1,34 +1,33 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ViewChild, ElementRef } from '@angular/core';
 
-
 @Component({
   selector: 'app-cover-letter',
   templateUrl: './cover-letter.component.html',
-  styleUrls: ['./cover-letter.component.scss']
+  styleUrls: ['./cover-letter.component.scss'],
 })
-export class CoverLetterComponent implements OnInit {
-  @ViewChild('myTextarea', { static: false }) myTextarea!: ElementRef;
+export class CoverLetterComponent {
+  @ViewChild('textToCopy', { static: false }) textToCopy!: ElementRef;
 
-  @Input() coverLetter:any
-  @Input() error:any
-  @Input() title:any
-  @Input() isLoading:any
-  @Input() company:any
+  @Input() coverLetter: any;
+  @Input() error: any;
+  @Input() title: any;
+  @Input() offer: any;
+  @Input() isLoading: any;
+  @Input() company: any;
   @Output() toggleCoverLetter = new EventEmitter<any>();
   @Output() reloadCoverLetter = new EventEmitter<any>();
 
   public copy: string = 'assets/img/copy.svg';
+  public copied: string = 'assets/img/copied.svg';
   public save: string = 'assets/img/save.svg';
   public reload: string = 'assets/img/reload.svg';
-  public copyText: string=''
 
+  public isCopied: boolean = false;
 
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  
 
   public handleClick(event: any): void {
     const targetElement = event.target as HTMLElement;
@@ -37,19 +36,32 @@ export class CoverLetterComponent implements OnInit {
     }
   }
 
-  public hideCoverLetter(){
-    this.toggleCoverLetter.emit()
+  public hideCoverLetter() {
+    this.toggleCoverLetter.emit();
   }
 
-  public reloadLetter(){
-    this.reloadCoverLetter.emit(this.title)
+  public reloadLetter() {
+    this.reloadCoverLetter.emit(this.offer);
   }
 
- public getCopyText() {
-  this.myTextarea.nativeElement.select();
-  document.execCommand('copy');
- }
+  copyContent() {
+    const textToCopy = this.coverLetter;
+
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        this.isCopied = true;
+
+        setTimeout(() => {
+          this.isCopied = false;
+        }, 1000);
+      })
+      .catch((error) => {
+        // console.error( error);
+      });
+  }
+ 
 
 
-
+  
 }

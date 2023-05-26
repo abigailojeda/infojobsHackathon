@@ -14,9 +14,12 @@ export class OfferDetailComponent implements OnInit {
   public offer: any;
   public isLoading: boolean = false;
   public coverLetterIsLoading: boolean = false;
-  public defaultImg: string ='https://components.infojobs.com/statics/images/pic-company-logo.png';
+  public defaultImg: string =
+    'https://components.infojobs.com/statics/images/pic-company-logo.png';
   public users: string = 'assets/img/users.svg';
   public paper: string = 'assets/img/paper.svg';
+  public leftArrow: string = 'assets/img/left_arrow_icon.svg';
+
   public location: string = 'assets/img/location.svg';
   public clockIcon: string = 'assets/img/clock.svg';
   public salaryIcon: string = 'assets/img/salary.svg';
@@ -41,12 +44,12 @@ export class OfferDetailComponent implements OnInit {
 
     this.offersService.getOfferById(this.offerId).subscribe({
       next: (response) => {
-        console.log(response);
+
         this.offer = response;
         this.isLoading = false;
       },
       error: (error) => {
-        console.log('Error occurred:', error);
+        //console.log('Error occurred:', error);
       },
     });
   }
@@ -66,49 +69,52 @@ export class OfferDetailComponent implements OnInit {
   }
 
   public getCoverLetter(offer: any) {
-    this.coverLetterIsLoading = true
+    this.coverLetterIsLoading = true;
     this.toggleCoverLetter();
-    this.openAiService.getCoverLetter(offer.title).subscribe({
+    this.openAiService.getCoverLetter(offer).subscribe({
       next: (result: string) => {
         if (!result) {
           this.error = 'No se ha podido generar la carta en este momento';
         } else {
           this.error = '';
-          console.log(this.coverLetter)
-          this.coverLetter = result
-          this.coverLetterIsLoading= false
-          
+          this.coverLetter = result;
+          this.coverLetterIsLoading = false;
         }
       },
       error: (error: any) => {
         console.error(error);
         this.error = 'Se produjo un error al generar la carta de presentación';
-      }
+      },
     });
   }
 
-  public reloadCoverLetter(offer:any){
-    this.coverLetterIsLoading = true
-    this.openAiService.getCoverLetter(offer.title).subscribe({
+  public reloadCoverLetter(offer: any) {
+    this.coverLetterIsLoading = true;
+    this.openAiService.getCoverLetter(offer).subscribe({
       next: (result: string) => {
         if (!result) {
           this.error = 'No se ha podido generar la carta en este momento';
         } else {
           this.error = '';
-          console.log(this.coverLetter)
-          this.coverLetter = result
-          this.coverLetterIsLoading= false
-          
+          this.coverLetter = result;
+          this.coverLetterIsLoading = false;
         }
       },
       error: (error: any) => {
         console.error(error);
         this.error = 'Se produjo un error al generar la carta de presentación';
-      }
+      },
     });
   }
-  
-  
 
- 
+  // public getUser(): void {
+  //   this.offersService.getUser().subscribe({
+  //     next: (response) => {
+  //       console.log(response);
+  //     },
+  //     error: (error) => {
+  //       console.log('Error occurred:', error);
+  //     },
+  //   });
+  // }
 }

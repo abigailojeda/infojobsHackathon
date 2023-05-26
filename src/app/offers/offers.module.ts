@@ -11,6 +11,7 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
 import { OfferComponent } from './pages/offer/offer.component';
 import { OfferDetailComponent } from './components/offer-detail/offer-detail.component';
 import { CoverLetterComponent } from './components/cover-letter/cover-letter.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -29,7 +30,8 @@ import { CoverLetterComponent } from './components/cover-letter/cover-letter.com
   imports: [
     CommonModule,
     OffersRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class OffersModule { }

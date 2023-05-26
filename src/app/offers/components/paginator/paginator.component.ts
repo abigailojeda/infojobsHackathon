@@ -44,7 +44,6 @@ export class PaginatorComponent implements OnInit {
   }
 
   public goToPage(page: any) {
-    console.log(page);
     this.setCurrentPage.emit(page)
   }
 }

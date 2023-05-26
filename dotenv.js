@@ -5,4 +5,3 @@ if (result.error) {
   throw result.error;
 }
 
-console.log('Environment variables loaded successfully.');
