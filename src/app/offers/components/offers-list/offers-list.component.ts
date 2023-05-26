@@ -94,7 +94,9 @@ export class OffersListComponent implements OnInit {
 
   }
 
-  // public getCoverLetter(){
-  //   this.openaiService.getCoverLetter()
-  // }
+  scrollToTop() {
+    window.scrollTo({ top: -20, behavior: 'smooth' });
+  }
+
+  
 }

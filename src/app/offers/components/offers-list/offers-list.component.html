@@ -4,7 +4,7 @@
   <div
     class="flex flex-col justify-start items-center pb-8 md:shadow-md bg-white rounded-md  lg:w-[1100px] md:w-[90%] w-full"
   >
-    <div class="sticky top-0 w-full px-8 pt-8 bg-white">
+    <div class="md:sticky top-0 w-full px-8 pt-8 bg-white">
       <h1 class="self-start text-lg text-gray my-3">
         Encuentra tu nuevo puesto de trabajo
       </h1>
@@ -47,6 +47,8 @@
         [offers]="offers"
       ></app-offers-result>
     </div>
+
+    <p class="{{isEmpty || !offers ? 'hidden' : 'block'}} text-sm text-accent_D1 md:hidden cursor-pointer" (click)="scrollToTop()">Volver arriba</p>
   </div>
   <app-paginator
     [totalPages]="totalPages"

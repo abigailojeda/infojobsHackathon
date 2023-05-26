@@ -36,5 +36,6 @@ export class OffersResultComponent implements OnInit {
     
   }
 
+ 
 
 }
