@@ -1,10 +1,11 @@
 
 # 📋 Cover Letter Generator - Infojobs 💼🤖  
 
-Con motivo del Hackathon de Infojobs con Midudev, he llevado a cabo esta propuesta d implementación de una funcionalidad nueva en la app de Infojobs.  
-He pensado que sería muy útil contar con una herramienta para generar automáticamente cartas de presentación, eso que tanto trabajo cuesta a veces.
+Con motivo del Hackathon de Infojobs con Midudev, he llevado a cabo esta propuesta de implementación de una funcionalidad nueva en la app de Infojobs.  
+He pensado que sería muy útil contar con una herramienta para generar automáticamente cartas de presentación, eso que tanto trabajo cuesta a veces.  
+
 Creo que sería muy cómodo que al seleccionar una oferta de trabajo, exista una opción para generar la cara de presentación simplemente pulsando un botón.  
-Y que mejor momento que este para lanzarse a explorar las opciones que la IA nos aporta para esto.  
+Y qué mejor momento que este para lanzarse a explorar las opciones que la IA nos aporta para esto.  
 
 # ✨👉 [Demo](https://infojobs-hackathon-abigail.vercel.app/offers)  
 
