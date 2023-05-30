@@ -35,7 +35,7 @@ En el transcurso de esta hackathon me ha dado tiempo de desarrollar algunos de l
 ➜ Crear funcionalidad para copiar la carta con un solo click
 ➜ Que pueda volver a generarse otra carta  
     
-  ![](screenshoots/cover_letter.png)   
+  ![](screenshoots/cover_letter_detail.png)   
     
 
 ## 🚧 Objetivos aún en progreso:  
