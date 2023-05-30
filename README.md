@@ -6,7 +6,7 @@ He pensado que sería muy útil contar con una herramienta para generar automát
 Creo que sería muy cómodo que al seleccionar una oferta de trabajo, exista una opción para generar la cara de presentación simplemente pulsando un botón.  
 Y que mejor momento que este para lanzarse a explorar las opciones que la IA nos aporta para esto.  
 
-[Demo](https://infojobs-hackathon-abigail.vercel.app/offers)  
+✨👉[Demo](https://infojobs-hackathon-abigail.vercel.app/offers)  
 
 
 ![](screenshoots/home.png)
