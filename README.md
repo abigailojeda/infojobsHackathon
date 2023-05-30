@@ -52,7 +52,7 @@ Objetivos que me planteé pero no me dio tiempo de alcanzar:
 Esta demo del proyecto la he desarrollado con [Angular](https://angular.io/) v14.  
 Además he utilizado las APis de Infojobs y OpenAI: 
 
-➜  [Infojobs](https://developer.infojobs.net/)
+➜  [Infojobs](https://developer.infojobs.net/)  
 ➜  [OpenAI](https://platform.openai.com/docs/api-reference)  
 
 
