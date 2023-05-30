@@ -31,8 +31,8 @@ En el transcurso de esta hackathon me ha dado tiempo de desarrollar algunos de l
   
   ![](screenshoots/cover_letter.png)   
     
-➜ Que la carta resultante sea editable
-➜ Crear funcionalidad para copiar la carta con un solo click
+➜ Que la carta resultante sea editable  
+➜ Crear funcionalidad para copiar la carta con un solo click  
 ➜ Que pueda volver a generarse otra carta  
     
   ![](screenshoots/cover_letter_detail.png)   
