@@ -9,7 +9,7 @@ Y que mejor momento que este para lanzarse a explorar las opciones que la IA nos
 [Demo](https://infojobs-hackathon-abigail.vercel.app/offers)  
 
 
-![](screenshots/home.png)
+![](screenshoots/home.png)
 
 
 ## 👌 Objetivos alcanzados:  
@@ -20,22 +20,22 @@ En el transcurso de esta hackathon me ha dado tiempo de desarrollar algunos de l
 ➜ Hacer buscador de ofertas simplificado, filtrando por provincia y categoría   
 ➜ Paginación de resultados  
   
-  ![](screenshots/search.png)   
+  ![](screenshoots/search.png)   
 
 ➜ Mostrar detalle de oferta con información detallada  
   
-  ![](screenshots/detail.png) 
+  ![](screenshoots/detail.png) 
 
 ➜ Generar carta con api de OpenAI teniendo en cuenta el título, la descripción y los requisitos mínimos de la oferta.  
 ➜ Mostrar animación mientras la carta se genera, ya que la API de openAI puede demorarse en devolver la respuesta
   
-  ![](screenshots/cover_letter.png)   
+  ![](screenshoots/cover_letter.png)   
     
 ➜ Que la carta resultante sea editable
 ➜ Crear funcionalidad para copiar la carta con un solo click
 ➜ Que pueda volver a generarse otra carta  
     
-  ![](screenshots/cover_letter.png)   
+  ![](screenshoots/cover_letter.png)   
     
 
 ## 🚧 Objetivos aún en progreso:  
